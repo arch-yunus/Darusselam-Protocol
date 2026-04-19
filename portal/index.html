@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darusselam Protokolü (DP-01) | Hanif Teknoloji Standartları</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="hero-content">
+            <img src="../assets/logo.png" alt="DP Logo" class="logo" id="main-logo">
+            <h1>Darusselam Protokolü</h1>
+            <p>"Bugünün biricik salih ameli insanlığın erdemi ve vicdanı olmaktır."</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="pillars" id="pillars">
+            <div class="section-title">
+                <h2>4 Temel Sütun</h2>
+                <p>Hanif Teknoloji'nin Mimari Temelleri</p>
+            </div>
+
+            <div class="pillar-grid">
+                <div class="pillar-card">
+                    <span class="pillar-icon">🌿</span>
+                    <h3>Anti-Dataizm</h3>
+                    <p>İnsanı bir veri algoritmasına indirgemeyen mimari yaklaşım. Metafiziğin ve iradenin savunulması.</p>
+                </div>
+                <div class="pillar-card">
+                    <span class="pillar-icon">⚖️</span>
+                    <h3>Hanif Tasarım</h3>
+                    <p>Fıtrata ve ekosisteme zarar vermeyen, planlı eskitme içermeyen sürdürülebilir teknoloji.</p>
+                </div>
+                <div class="pillar-card">
+                    <span class="pillar-icon">🧠</span>
+                    <h3>Bilişsel Özgürlük</h3>
+                    <p>Dopamin sömürüsüne ve karanlık tasarımlara karşı iradenin ve algı bütünlüğünün korunması.</p>
+                </div>
+                <div class="pillar-card">
+                    <span class="pillar-icon">👤</span>
+                    <h3>Ademiyet Çizgisi</h3>
+                    <p>Tekillik çağında makinenin insana hizmeti. İnsanı makineleştiren müdahalelerin reddi.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="audit-simulator">
+            <div class="container">
+                <div class="section-title" style="color: white;">
+                    <h2 style="color: white; border-bottom: 2px solid var(--accent-gold);">DP-Audit Simülasyonu</h2>
+                    <p>Hanif uyumluluğunu test edin</p>
+                </div>
+
+                <div class="terminal-mockup" id="terminal">
+                    <div style="color: #4ade80;">$ dp-audit --path ./current-project</div>
+                    <div style="margin-top: 10px;">[bold green]Darusselam Protokolü (DP-01) Denetim Başlatılıyor[/bold green]</div>
+                    <div style="color: #94a3b8;">Hanif Teknoloji Standartları v0.1.0</div>
+                    <div style="color: #60a5fa; margin-top: 5px;">Dosyalar taranıyor...</div>
+                    <div id="output-seq"></div>
+                    <span class="cursor"></span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Darusselam Protocol. Fıtratı korumak için tasarlanmıştır.</p>
+    </footer>
+
+    <script>
+        const outputLines = [
+            { text: "----------------------------------------", color: "white" },
+            { text: "Taranan Dosya Sayısı: 142", color: "cyan" },
+            { text: "Tespit Edilen İhlaller: 0", color: "cyan" },
+            { text: "Durum: [bold green]PASSED (Compliant)[/bold green]", color: "green" },
+            { text: "----------------------------------------", color: "white" },
+            { text: "Tebrikler! Projeniz standartlara uyumludur.", color: "green" }
+        ];
+
+        let lineIndex = 0;
+        const outputSeq = document.getElementById('output-seq');
+
+        function typeLine() {
+            if (lineIndex < outputLines.length) {
+                const line = document.createElement('div');
+                line.style.color = outputLines[lineIndex].color === "white" ? "#fff" : 
+                                  outputLines[lineIndex].color === "cyan" ? "#22d3ee" : "#4ade80";
+                line.style.marginTop = "5px";
+                line.innerHTML = outputLines[lineIndex].text.replace('[bold green]', '<b>').replace('[/bold green]', '</b>');
+                outputSeq.appendChild(line);
+                lineIndex++;
+                setTimeout(typeLine, 800);
+            }
+        }
+
+        window.onload = () => {
+            setTimeout(typeLine, 2000);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+pillars:
+  anti_dataism:
+    id: "DP-001"
+    name: "Veri İndirgemeciliğine Ret"
+    description: "İnsanı sadece bir veri algoritması olarak gören sistemlerin reddi."
+    heuristics:
+      non_compliant_libs:
+        - "google-analytics"
+        - "facebook-pixel"
+        - "mixpanel"
+        - "hotjar"
+      patterns:
+        - 'localStorage\.setItem\(.*tracking.*\)'
+        - 'PII_COLLECTION'
+    compliance_rules:
+      - "Kullanıcıyı sadece 'node' olarak modelleyemezsin."
+
+  zero_harm:
+    id: "DP-002"
+    name: "Hanif Teknoloji Tasarımı"
+    description: "Fıtrata ve ekosisteme zarar vermeyen mimari."
+    heuristics:
+      patterns:
+        - 'EXPIRATION_DATE_HARDCODED'
+        - 'PLANNED_OBSOLESCENCE'
+        - 'THROTTLE_PERFORMANCE_AFTER_DAYS'
+    compliance_rules:
+      - "Sistem planlı eskitme içeremez."
+
+  cognitive_sovereignty:
+    id: "DP-003"
+    name: "Bilişsel Özgürlük ve İrade Savunması"
+    description: "Karanlık tasarımların ve dopamin sömürüsünün yasaklanması."
+    heuristics:
+      patterns:
+        - 'display:\s*none.*unsubscribe'
+        - 'fake_scarcity_timer'
+        - 'infinite_scroll_trap'
+    compliance_rules:
+      - "Algoritmalar şeffaf olmalı."
+
+  ademiyet_line:
+    id: "DP-004"
+    name: "Transhümanist Sınır (Ademiyet Çizgisi)"
+    description: "Makinenin insana hizmet etmesi, insanın makineleşmemesi."
+    heuristics:
+      patterns:
+        - 'NEURAL_LINK_API'
+        - 'BIO_HACKING_METRICS'
+        - 'BYPASS_MORAL_JUDGEMENT'
+    compliance_rules:
+      - "İnsani ahlaki mekanizmalar devre dışı bırakılamaz."
